@@ -1,7 +1,6 @@
 package com.dilberaslan.graduationProject.graduationProject.prd.converter;
 
 import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductTypeDto;
-import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductTypeSaveRequestDto;
 import com.dilberaslan.graduationProject.graduationProject.prd.entity.PrdProductType;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

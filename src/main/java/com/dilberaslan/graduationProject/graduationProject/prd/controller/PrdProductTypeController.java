@@ -3,7 +3,6 @@ package com.dilberaslan.graduationProject.graduationProject.prd.controller;
 import com.dilberaslan.graduationProject.graduationProject.gen.dto.RestResponse;
 import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductTypeDetailDto;
 import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductTypeDto;
-import com.dilberaslan.graduationProject.graduationProject.prd.enums.PrdProductTypeName;
 import com.dilberaslan.graduationProject.graduationProject.prd.service.PrdProductTypeService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;

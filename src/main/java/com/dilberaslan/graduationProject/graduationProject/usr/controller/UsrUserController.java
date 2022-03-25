@@ -2,15 +2,12 @@ package com.dilberaslan.graduationProject.graduationProject.usr.controller;
 
 import com.dilberaslan.graduationProject.graduationProject.gen.dto.RestResponse;
 import com.dilberaslan.graduationProject.graduationProject.usr.dto.UsrUserDto;
-import com.dilberaslan.graduationProject.graduationProject.usr.dto.UsrUserSaveRequestDto;
 import com.dilberaslan.graduationProject.graduationProject.usr.dto.UsrUserUpdateRequestDto;
 import com.dilberaslan.graduationProject.graduationProject.usr.service.UsrUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 /**
  * @author Dilber
@@ -21,16 +18,7 @@ import javax.validation.Valid;
 public class UsrUserController {
     private final UsrUserService usrUserService;
 
-//    @Operation(tags = "User Controller")
-//    @PostMapping
-//    public ResponseEntity save(@Valid @RequestBody UsrUserSaveRequestDto usrUserSaveRequestDto) {
-//
-//        UsrUserDto usrUserDto = usrUserService.save(usrUserSaveRequestDto);
-//
-//        return ResponseEntity.ok(RestResponse.of(usrUserDto));
-//    }
-
-    @Operation(tags = "User Controller")
+    @Operation(tags = "User Controller", summary = "Delete User")
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
 
@@ -39,7 +27,7 @@ public class UsrUserController {
         return ResponseEntity.ok(RestResponse.empty());
     }
 
-    @Operation(tags = "User Controller")
+    @Operation(tags = "User Controller", summary = "Update User")
     @PutMapping
     public ResponseEntity update(@RequestBody UsrUserUpdateRequestDto usrUserUpdateRequestDto) {
 

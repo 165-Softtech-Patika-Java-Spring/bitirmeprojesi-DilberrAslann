@@ -8,8 +8,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @author dilbe
  */
@@ -23,7 +21,6 @@ class UsrUserServiceTest {
     private UsrUserEntityService usrUserEntityService;
     @Mock
     private PasswordEncoder passwordEncoder;
-
 
 
     @Test

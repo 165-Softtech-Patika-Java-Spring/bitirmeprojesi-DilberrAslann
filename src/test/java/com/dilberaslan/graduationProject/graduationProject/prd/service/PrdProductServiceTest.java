@@ -2,7 +2,6 @@ package com.dilberaslan.graduationProject.graduationProject.prd.service;
 
 import com.dilberaslan.graduationProject.graduationProject.prd.converter.PrdProductMapper;
 import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductDto;
-import com.dilberaslan.graduationProject.graduationProject.prd.dto.PrdProductSaveRequestDto;
 import com.dilberaslan.graduationProject.graduationProject.prd.entity.PrdProduct;
 import com.dilberaslan.graduationProject.graduationProject.prd.service.entityService.PrdProductEntityService;
 import com.dilberaslan.graduationProject.graduationProject.prd.service.entityService.PrdProductTypeEntityService;
@@ -16,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * @author dilbe
@@ -70,16 +69,17 @@ class PrdProductServiceTest {
 
         List<PrdProductDto> result = prdProductService.findAll();
 
-        assertEquals(1, result.size());    }
+        assertEquals(1, result.size());
+    }
 
     @Test
-    void shouldFindAllProductListIsEmpty(){
+    void shouldFindAllProductListIsEmpty() {
         List<PrdProduct> prdProductList = new ArrayList<>();
         PrdProductDto prdProductDto = mock(PrdProductDto.class);
         when(prdProductDto.getPriceWithKdv()).thenReturn(null);
 
         when(prdProductEntityService.findAll()).thenReturn(prdProductList);
-       // when(PrdProductMapper.INSTANCE.convertToPrdProductDtoList(prdProductList)).thenReturn(prdProductDtoList);
+        // when(PrdProductMapper.INSTANCE.convertToPrdProductDtoList(prdProductList)).thenReturn(prdProductDtoList);
 
 
         List<PrdProductDto> result = prdProductService.findAll();
@@ -88,13 +88,14 @@ class PrdProductServiceTest {
     }
 
     @Test
-    void shouldFindAllProductListIsNull(){
+    void shouldFindAllProductListIsNull() {
 
 //        when(prdProductEntityService.findAll()).thenReturn(null);
 //        when(prdProductMapper.INSTANCE.convertToPrdProductDtoList(null)).thenCallRealMethod();
 //
 //        assertThrows(NullPointerException.class, () -> prdProductService.findAll());
     }
+
     @Test
     void updatePrice() {
     }
